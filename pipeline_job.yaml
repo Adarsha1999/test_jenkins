@@ -1,0 +1,11 @@
+- job:
+    name: my-pipeline-deploy
+    project-type: pipeline
+    description: "Deploy pipeline using JJB"
+    pipeline-scm:
+      scm:
+        - git:
+            url: https://github.com/Adarsha1999/test_jenkins.git
+            branches:
+              - main
+      script-path: Jenkinsfile
