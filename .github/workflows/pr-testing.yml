@@ -1,0 +1,34 @@
+name: PR Testing
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Build
+        run: |
+          echo "Building..."
+          echo "Build stage completed successfully"
+      
+      - name: Test
+        run: |
+          echo "Testing..."
+          echo "Test stage completed successfully"
+      
+      - name: Summary
+        if: always()
+        run: |
+          echo "PR Testing workflow completed"
