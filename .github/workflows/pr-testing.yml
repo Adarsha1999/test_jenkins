@@ -29,6 +29,4 @@ jobs:
       - name: Summary
         if: always()
         run: |
-          echo "PR Testing Summary:"
-          echo "- Build: Completed"
-          echo "- Test: Completed"
+          echo "PR Testing workflow completed"
